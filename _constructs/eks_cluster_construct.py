@@ -1,12 +1,12 @@
-from aws_cdk import core as cdk
+from constructs import Construct
 from aws_cdk import aws_iam
 from aws_cdk import aws_eks
 from aws_cdk import aws_ec2
 
 
-class EksClusterConstruct(cdk.Construct):
+class EksClusterConstruct(Construct):
     def __init__(self,
-                 scope: cdk.Construct,
+                 scope: Construct,
                  id: str,
                  vpc: aws_ec2.Vpc
                  ) -> None:

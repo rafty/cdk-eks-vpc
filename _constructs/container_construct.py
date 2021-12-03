@@ -1,13 +1,13 @@
 import os
 import glob
 import yaml
-from aws_cdk import core as cdk
+from constructs import Construct
 from aws_cdk import aws_eks
 
 
-class ContainerConstruct(cdk.Construct):
+class ContainerConstruct(Construct):
     def __init__(self,
-                 scope: cdk.Construct,
+                 scope: Construct,
                  id: str,
                  cluster: aws_eks.Cluster,
                  ) -> None:

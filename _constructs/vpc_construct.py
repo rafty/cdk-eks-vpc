@@ -1,9 +1,9 @@
-from aws_cdk import core as cdk
+from constructs import Construct
 from aws_cdk import aws_ec2
 
 
-class VpcConstruct(cdk.Construct):
-    def __init__(self, scope: cdk.Construct, id: str) -> None:
+class VpcConstruct(Construct):
+    def __init__(self, scope: Construct, id: str) -> None:
         super().__init__(scope, id)
 
         self._vpc = aws_ec2.Vpc(
@@ -17,7 +17,7 @@ class VpcConstruct(cdk.Construct):
                     name="Public",
                     cidr_mask=24),
                 aws_ec2.SubnetConfiguration(
-                    subnet_type=aws_ec2.SubnetType.PRIVATE,
+                    subnet_type=aws_ec2.SubnetType.PRIVATE_WITH_NAT,
                     name="Private",
                     cidr_mask=24),
             ],

@@ -1,10 +1,10 @@
-from aws_cdk import core as cdk
+from constructs import Construct
 from aws_cdk import aws_eks
 
 
-class ContainerToolConstruct(cdk.Construct):
+class ContainerToolConstruct(Construct):
     def __init__(self,
-                 scope: cdk.Construct,
+                 scope: Construct,
                  id: str,
                  cluster: aws_eks.Cluster,
                  ) -> None:

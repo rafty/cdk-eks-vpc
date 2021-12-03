@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import os
-from aws_cdk import core as cdk
+import aws_cdk  as cdk
 from stacks.eks_stack import EksStack
 from stacks.vpc_stack import VpcStack
 from stacks.container_stack import ContainerStack

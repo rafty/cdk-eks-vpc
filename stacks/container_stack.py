@@ -1,13 +1,14 @@
-from aws_cdk import core as cdk
+from aws_cdk import Stack
+from constructs import Construct
 from aws_cdk import aws_eks
 from _constructs.container_construct import ContainerConstruct
 from _constructs.container_argocd_construct import ContainerToolConstruct
 
 
-class ContainerStack(cdk.Stack):
+class ContainerStack(Stack):
 
     def __init__(self,
-                 scope: cdk.Construct,
+                 scope: Construct,
                  construct_id: str,
                  cluster: aws_eks.Cluster,
                  **kwargs) -> None:
